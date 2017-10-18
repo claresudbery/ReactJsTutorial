@@ -23,8 +23,7 @@ const instructions = Platform.select({
 const Container = styled.View`
   justifyContent: center;
   alignItems: center;
-  backgroundColor: #F5FCAA; /* was F5FCFF for a pale blue. */
-  margin: 40px;
+  margin: 300px;
 `;
 
 const TextStyled = styled.Text`
@@ -38,14 +37,8 @@ export default class App extends Component<{}> {
     return (
       <Container>
         <TextStyled>
-          Welcome to React Native!
+          Welcome to JavaScript Jeopardy!
         </TextStyled>
-        <Text>
-          To get started, edit App.js
-        </Text>
-        <Text>
-          {instructions}
-        </Text>
       </Container>
     );
   }
