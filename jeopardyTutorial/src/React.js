@@ -11,7 +11,8 @@ import {
   Text,
   View,
   Image,
-  ScrollView
+  ScrollView,
+  TouchableWithoutFeedback
 } from 'react-native';
 import styled from 'styled-components/native';
 import Question from './Question';
@@ -86,6 +87,8 @@ const TextStyled = styled.Text`
   margin: 10px;
 `
 
+setScrollHeight = (width, height) => this.setState({scrollHeight: height});
+
 export default class ReactJS extends Component<{}> {
   render() {
     return (
@@ -95,10 +98,12 @@ export default class ReactJS extends Component<{}> {
         </TextStyled>
         <View>
             <ScrollView>
-               {names.map(item ⇒ (
-                     <View key = {item.id}>
+               {names.map((item, index) => (
+            <TouchableWithoutFeedback key = {item.id}>
+                     <View style = {styles.item}>
                         <Text>{item.name}</Text>
                      </View>
+            </TouchableWithoutFeedback>
                   ))}
             </ScrollView>
          </View>
@@ -106,6 +111,20 @@ export default class ReactJS extends Component<{}> {
     );
   }
 }
+
+const styles = StyleSheet.create ({
+   item: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      padding: 30,
+      height: 50,
+      margin: 2,
+      borderColor: '#2a4944',
+      borderWidth: 1,
+      backgroundColor: '#d2f7f1'
+   }
+})
 
 ReactJS.navigationOptions = {
   tabBarIcon: () => (
