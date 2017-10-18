@@ -12,7 +12,8 @@ import {
   View,
   Image,
   ScrollView,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
+  TouchableOpacity
 } from 'react-native';
 import styled from 'styled-components/native';
 import Question from './Question';
@@ -92,37 +93,33 @@ setScrollHeight = (width, height) => this.setState({scrollHeight: height});
 export default class ReactJS extends Component<{}> {
   render() {
     return (
-      <Container>
-        <TextStyled>
-          ReactJS Jeopardy
-        </TextStyled>
-        <View>
-            <ScrollView>
-               {names.map((item, index) => (
-            <TouchableWithoutFeedback key = {item.id}>
-                     <View style = {styles.item}>
-                        <Text>{item.name}</Text>
-                     </View>
-            </TouchableWithoutFeedback>
-                  ))}
-            </ScrollView>
+      <View> 
+            {
+               data.map((item, index) => (
+                  <TouchableOpacity
+                     key = {item.id}
+                     style = {styles.container}>
+                     
+                     <Text style = {styles.text}>
+                        {item.Q}
+                     </Text>
+                  </TouchableOpacity>
+               ))
+            }
          </View>
-      </Container>
     );
   }
 }
 
 const styles = StyleSheet.create ({
-   item: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
+   container: {
+      padding: 10,
+      marginTop: 3,
+      backgroundColor: '#d9f9b1',
       alignItems: 'center',
-      padding: 30,
-      height: 50,
-      margin: 2,
-      borderColor: '#2a4944',
-      borderWidth: 1,
-      backgroundColor: '#d2f7f1'
+   },
+   text: {
+      color: '#4f603c'
    }
 })
 
