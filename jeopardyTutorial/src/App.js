@@ -10,7 +10,8 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  Image
 } from 'react-native';
 import styled from 'styled-components/native';
 import { TabNavigator } from 'react-navigation';
@@ -35,9 +36,7 @@ export default class jeopardyTutorial extends Component<{}> {
   render() {
     return (
       <Container>
-        <TextStyled>
-          Welcome to JavaScript Jeopardy!
-        </TextStyled>
+        <Image source={require('./img/jeopardy-js.png')}/>
       </Container>
     );
   }

@@ -9,7 +9,8 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  Image
 } from 'react-native';
 import styled from 'styled-components/native';
 
@@ -42,4 +43,10 @@ export default class Vue extends Component<{}> {
       </Container>
     );
   }
+}
+
+Vue.navigationOptions = {
+  tabBarIcon: () => (
+    <Image source={require('./img/vue.png')}/>
+  )
 }

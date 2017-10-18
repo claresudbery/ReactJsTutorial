@@ -9,7 +9,8 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  Image
 } from 'react-native';
 import styled from 'styled-components/native';
 
@@ -42,4 +43,10 @@ export default class Ember extends Component<{}> {
       </Container>
     );
   }
+}
+
+Ember.navigationOptions = {
+  tabBarIcon: () => (
+    <Image source={require('./img/ember.png')}/>
+  )
 }
