@@ -59,6 +59,21 @@ const data = [{
   A: "What is create-react-app?"
 }];
 
+const names = [
+         {'name': 'Ben', 'id': 1},
+         {'name': 'Susan', 'id': 2},
+         {'name': 'Robert', 'id': 3},
+         {'name': 'Mary', 'id': 4},
+         {'name': 'Daniel', 'id': 5},
+         {'name': 'Laura', 'id': 6},
+         {'name': 'John', 'id': 7},
+         {'name': 'Debra', 'id': 8},
+         {'name': 'Aron', 'id': 9},
+         {'name': 'Ann', 'id': 10},
+         {'name': 'Steve', 'id': 11},
+         {'name': 'Olivia', 'id': 12}
+      ];
+
 const Container = styled.View`
   justifyContent: center;
   alignItems: center;
@@ -79,15 +94,14 @@ export default class ReactJS extends Component<{}> {
           ReactJS Jeopardy
         </TextStyled>
         <View>
-          <ScrollView>
-            {data.map((item, index) =>
-              (<View key={item.id}>
-                <Question q={item.Q}/>
-                <Answer a={item.A}/>
-              </View>)
-            )}
-          </ScrollView>
-        </View>
+            <ScrollView>
+               {names.map(item ⇒ (
+                     <View key = {item.id}>
+                        <Text>{item.name}</Text>
+                     </View>
+                  ))}
+            </ScrollView>
+         </View>
       </Container>
     );
   }
