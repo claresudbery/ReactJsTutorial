@@ -4,7 +4,6 @@
  * @flow
  */
 
-import { AppRegistry } from 'react-native';
 import React, { Component } from 'react';
 import {
   Platform,
@@ -13,11 +12,6 @@ import {
   View
 } from 'react-native';
 import styled from 'styled-components/native';
-import { TabNavigator } from 'react-navigation';
-import Angular from './Angular';
-import Ember from './Ember';
-import ReactJS from './React';
-import Vue from './Vue';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -38,39 +32,14 @@ const TextStyled = styled.Text`
   margin: 10px;
 `
 
-export default class jeopardyTutorial extends Component<{}> {
+export default class Ember extends Component<{}> {
   render() {
     return (
       <Container>
         <TextStyled>
-          Welcome to JavaScript Jeopardy!
+          Ember Jeopardy
         </TextStyled>
       </Container>
     );
   }
 }
-
-const mainNavigator = TabNavigator({
-  Home: {
-    screen: jeopardyTutorial,
-    path: ''
-  },
-  Angular: {
-    screen: Angular,
-    path: 'angular'
-  },
-  React: {
-    screen: ReactJS,
-    path: 'react'
-  },
-  Ember: {
-    screen: Ember,
-    path: 'ember'
-  },
-  Vue: {
-    screen: Vue,
-    path: 'vue'
-  }
-});
-
-AppRegistry.registerComponent('jeopardyTutorial', () => mainNavigator);
