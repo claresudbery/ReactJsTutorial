@@ -6,18 +6,12 @@
 
 import React, { Component } from 'react';
 import {
-  AppRegistry,
   StyleSheet,
-  Text,
   View,
-  Image,
-  ScrollView,
-  TouchableWithoutFeedback,
-  TouchableOpacity
+  Image
 } from 'react-native';
 import styled from 'styled-components/native';
-import Question from './Question';
-import Answer from './Answer';
+import QandA from './QandA';
 
 const data = [{
   id: 1,
@@ -61,21 +55,6 @@ const data = [{
   A: "What is create-react-app?"
 }];
 
-const names = [
-         {'name': 'Ben', 'id': 1},
-         {'name': 'Susan', 'id': 2},
-         {'name': 'Robert', 'id': 3},
-         {'name': 'Mary', 'id': 4},
-         {'name': 'Daniel', 'id': 5},
-         {'name': 'Laura', 'id': 6},
-         {'name': 'John', 'id': 7},
-         {'name': 'Debra', 'id': 8},
-         {'name': 'Aron', 'id': 9},
-         {'name': 'Ann', 'id': 10},
-         {'name': 'Steve', 'id': 11},
-         {'name': 'Olivia', 'id': 12}
-      ];
-
 const Container = styled.View`
   justifyContent: center;
   alignItems: center;
@@ -94,37 +73,15 @@ export default class ReactJS extends Component<{}> {
   render() {
     return (
       <View> 
-            {
-               data.map((item, index) => (
-                  <TouchableOpacity
-                     key = {item.id}
-                     style = {styles.container}>
-                     
-                     <Text style = {styles.text}>
-                        {item.Q}
-                     </Text>
-                     <Text style = {styles.text}>
-                        {item.A}
-                     </Text>
-                  </TouchableOpacity>
-               ))
-            }
-         </View>
+          {
+             data.map((item, index) => (
+                <QandA key={item.id} q={item.Q} a={item.A}/>
+             ))
+          }
+       </View>
     );
   }
 }
-
-const styles = StyleSheet.create ({
-   container: {
-      padding: 10,
-      marginTop: 3,
-      backgroundColor: '#d9f9b1',
-      alignItems: 'center',
-   },
-   text: {
-      color: '#4f603c'
-   }
-})
 
 ReactJS.navigationOptions = {
   tabBarIcon: () => (

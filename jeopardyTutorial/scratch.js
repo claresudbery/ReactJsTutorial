@@ -25,3 +25,13 @@
                }
             </ScrollView>
          </View>
+
+         
+            {
+              data.map(trivia =>
+                <View>
+                <Question q={trivia.Q}/>
+                <Answer a={trivia.A}/>
+                </View>
+              )
+            }
