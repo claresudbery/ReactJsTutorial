@@ -78,14 +78,16 @@ export default class ReactJS extends Component<{}> {
         <TextStyled>
           ReactJS Jeopardy
         </TextStyled>
-        <ScrollView>
-          {data.map(trivia =>
-            <View key={trivia.id}>
-              <Question q={trivia.Q}/>
-              <Answer a={trivia.A}/>
-            </View>
-          )}
-        </ScrollView>
+        <View>
+          <ScrollView>
+            {data.map((item, index) =>
+              (<View key={item.id}>
+                <Question q={item.Q}/>
+                <Answer a={item.A}/>
+              </View>)
+            )}
+          </ScrollView>
+        </View>
       </Container>
     );
   }

@@ -13,3 +13,15 @@
             ))
           }
         </List>
+
+        <View>
+            <ScrollView>
+               {
+                  this.state.names.map((item, index) ⇒ (
+                     <View key = {item.id} style = {styles.item}>
+                        <Text>{item.name}</Text>
+                     </View>
+                  ))
+               }
+            </ScrollView>
+         </View>
