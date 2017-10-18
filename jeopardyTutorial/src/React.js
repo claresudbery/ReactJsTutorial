@@ -19,20 +19,20 @@ const data = [{
   A: "What is Facebook?"
 },{
   id: 2,
-  Q: "What happens during the lifecycle of a React component?",
-  A: "Initialization, State/property updates, Destruction"
+  Q: "Initialization, State/property updates, Destruction",
+  A: "What happens during the lifecycle of a React component?"
 },{
   id: 3,
   Q: "True or False: JSX a requirement in React.",
   A: "What is false?"
 },{
   id: 4,
-  Q: "A popular flux framework.",
-  A: "What is Redux, Flummox, Alt, Fluxible, etc?"
+  Q: "Popular flux frameworks.",
+  A: "What are Redux, Flummox, Alt, Fluxible, etc?"
 },{
   id: 5,
   Q: "A component that is a function of the properties provided to it.",
-  A: "What are stateless components?"
+  A: "What is a stateless component?"
 },{
   id: 6,
   Q: "True or False: React is an MVC based framework.",
@@ -47,7 +47,7 @@ const data = [{
   A: "What is render?"
 },{
   id: 9,
-  Q: "React focuses on this part of MVC.",
+  Q: "The part of MVC that React focuses on.",
   A: "What is view?"
 },{
   id: 10,
