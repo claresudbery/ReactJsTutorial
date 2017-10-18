@@ -11,6 +11,7 @@ import {
   Text,
   View
 } from 'react-native';
+import styled from 'styled-components/native';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -19,39 +20,33 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
+const Container = styled.View`
+  justifyContent: center;
+  alignItems: center;
+  backgroundColor: #F5FCAA; /* was F5FCFF for a pale blue. */
+  margin: 40px;
+`;
+
+const TextStyled = styled.Text`
+  fontSize: 20;
+  textAlign: center;
+  margin: 10px;
+`
+
 export default class App extends Component<{}> {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
+      <Container>
+        <TextStyled>
           Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
+        </TextStyled>
+        <Text>
           To get started, edit App.js
         </Text>
-        <Text style={styles.instructions}>
+        <Text>
           {instructions}
         </Text>
-      </View>
+      </Container>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
