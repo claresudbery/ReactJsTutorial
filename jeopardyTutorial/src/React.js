@@ -103,6 +103,9 @@ export default class ReactJS extends Component<{}> {
                      <Text style = {styles.text}>
                         {item.Q}
                      </Text>
+                     <Text style = {styles.text}>
+                        {item.A}
+                     </Text>
                   </TouchableOpacity>
                ))
             }
